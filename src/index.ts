@@ -1,4 +1,5 @@
 // import './example/basic-type';
-import './example/symbol';
+// import './example/symbol';
+import "./example/interface";
 
-document.title = "Amos ChenYQ"
+document.title = "AmosChenYQ"

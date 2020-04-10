@@ -73,9 +73,9 @@ class C extends Array {
   constructor (...args: any[]) {
     super(...args)
   }
-  static get [Symbol.species] () { // this method will be called and return Array when a instance of class C is used to judge whether it is a instance of another class 
+  static get [Symbol.species] () { // this method will be called and return 'Array' when a instance of class C is used to judge whether it is a instance of another class
     return Array
-  }  
+  }
   getName() {
     return 'AmosChenYQ'
   }

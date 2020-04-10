@@ -4,24 +4,26 @@ Learn TypeScript by simple examples
 ### How to run
 
 ```bash
-npm start
+npm run start
 ```
 
-Then write some examples in ./src/examples or ./src/
+Then write some examples in `./src/example` or `./src/`
+
+in `.src/example` write some example code with detail comments, you can clean up `index.ts` and import an example and run `npm run start`, then you will get a development playground environment. 
 
 ### How to build
 
-```
+```bash
 npm build
 ```
 
-All build file will be output under ./dist/
+All build file will be output under `./dist/`
 
 ### File Description
 
-package.json is for npm setting
+`package.json` is for npm setting
 
-tsconfig.json is for typescript setting
+`tsconfig.json` is for typescript setting
 
-./build/webpack.config.js is for webpack setting, can found more detail descriptions in webpack website documentations
+`./build/webpack.config.js` is for web-pack setting, can found more detail descriptions in web-pack website documentations
 
