@@ -35,13 +35,18 @@ console.log(getVegetable({type: "tomato"}));
 console.log(getVegetable({type: "tomato", size: "big"} as Vegetable));
 
 // Or you can change interface like this:
-// interface Vegetable {
-//   color?: string,
-//   type: string,
-//   [prop: string]: any
-// }
-// this will be OK
-// console.log(getVegetable({type: "tomato", size: "big"}));
+interface VegetableA {
+  color?: string | undefined,
+  type: string,
+  weight: number,
+  [prop: string]: any
+}
+
+const getVegetableA = ({ color, type }: VegetableA) => {
+  return `A ${color ? (color + ' ') : ''}${type}`
+}
+// Error:
+console.log(getVegetableA({type: "tomato", size: "big", weight: 100, height: 100}));
 
 // Or you can use 'Type compatibility' in TS
 const vegetableInfo = {
