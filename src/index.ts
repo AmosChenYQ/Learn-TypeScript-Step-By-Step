@@ -6,6 +6,7 @@
 // import "./example/es6-class-1.js";
 // import "./example/es6-class-2.js";
 // import "./example/b.js";
-import "./example/class";
+// import "./example/class";
+import "./example/enum";
 
 document.title = "AmosChenYQ"
