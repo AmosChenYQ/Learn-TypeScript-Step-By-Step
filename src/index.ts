@@ -7,6 +7,7 @@
 // import "./example/es6-class-2.js";
 // import "./example/b.js";
 // import "./example/class";
-import "./example/enum";
+// import "./example/enum";
+import "./example/inference-compatibility";
 
 document.title = "AmosChenYQ"
