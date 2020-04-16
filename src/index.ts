@@ -8,6 +8,7 @@
 // import "./example/b.js";
 // import "./example/class";
 // import "./example/enum";
-import "./example/inference-compatibility";
+// import "./example/inference-compatibility";
+import "./example/advanced-type";
 
 document.title = "AmosChenYQ"
