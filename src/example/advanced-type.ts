@@ -146,3 +146,31 @@ const _info: InfoInterface = {
     age: 18 // 19 error: Type '19' is not assignable to type '18'
 }
 
+interface Square {
+    kind: 'square',
+    size: number
+}
+
+interface Rectangle {
+    kind: 'rectangle',
+    height: number,
+    width: number
+}
+
+interface Circle {
+    kind: 'circle',
+    radius: number
+}
+
+type Shape = Square | Rectangle | Circle
+function assertNever(value: never): never {
+    throw new Error("unexpected obj: " + value)
+}
+function getArea(s: Shape): number {
+    switch(s.kind) {
+        case 'square': return s.size * s.size; break;
+        case 'rectangle': return s.height * s.width; break;
+        case 'circle': return Math.PI * s.radius ** 2; break;
+        default: return assertNever(s)
+    }
+}
