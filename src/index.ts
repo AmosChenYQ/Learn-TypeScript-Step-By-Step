@@ -9,6 +9,7 @@
 // import "./example/class";
 // import "./example/enum";
 // import "./example/inference-compatibility";
-import "./example/advanced-type";
+// import "./example/advanced-type";
+import "./example/advanced-type-2";
 
 document.title = "AmosChenYQ"
