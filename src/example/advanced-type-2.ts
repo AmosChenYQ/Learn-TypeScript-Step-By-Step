@@ -74,7 +74,7 @@ interface TypeTypes {
 }
 
 type typetypeskeys = keyof TypeTypes // "a" | "b" | "c" | "d" | "e" | "f"
-type Test = TypeTypes[keyof TypeTypes] // string | number | object | null | undefined
+type Test = TypeTypes[keyof TypeTypes] // string | number | object | null | undefined (never is lost)
 
 interface Info1 {
     age: number
@@ -259,3 +259,68 @@ let value10: unknown
 // value10.age // error
 
 
+type Types1<T> = {
+    [P in keyof T]: number
+}
+
+type type11 = Types1<any> // keyof any is string
+// type type11 = {
+//     [x: string]: number;
+// }
+
+type type12 = Types1<unknown> // {} keyof unknown is nothing
+
+type Types2<T> = T extends string ? string : number
+let index: Types2<'A'> // string
+
+type TypeName<T> = T extends any ? T : never
+type Type3 = TypeName<string | number> // string | number
+
+type TypeNames<T> = 
+    T extends string ? string :
+    T extends number ? number :
+    T extends boolean ? boolean :
+    T extends undefined ? undefined :
+    T extends () => void ? () => void :
+    object
+
+type Type4 = TypeNames<()=>void> // ()=>void
+type Type5 = TypeNames<string[]> // object
+type Type6 = TypeNames<(()=>void) | string[]> // object | (() => void)
+
+type Diff<T, U> = T extends U ? never: T
+type TestDiff = Diff<string | number | boolean, undefined | number> // string | boolean
+
+type Type7<T> = {
+    [K in keyof T]: T[K] extends ((arg: string)=>void) ? K : never
+}[keyof T]
+
+interface Part {
+    id: number
+    name: string
+    subparts: Part[]
+    unpdatePart: (name: string)=>void
+}
+
+// type TestPart = Type7<Part> // updatePart
+type TestPart = Type7<Part> // filter function
+
+type Type8<T> = T extends any[] ? T[number] : T
+type Test3 = Type8<string[]> // string
+type Test4 = Type8<string> // string
+
+type Type9<T> = T extends Array<infer U> ? U : T
+type Test5 = Type9<string[]> // string
+type Test6 = Type9<string> // string
+
+// Exclude
+type Type10 = Exclude<'a'|'b'|'c', 'a'|'b'> // 'c'
+
+// Extract<T, U>
+type Type11 = Extract<'a'|'b'|'c', 'c'|'b'> // 'b'|'c'
+
+// NonNullable
+type Type12 = NonNullable<string | number | null | undefined> // string | number
+
+// R
+type Type13 = ReturnType<()=>string>
