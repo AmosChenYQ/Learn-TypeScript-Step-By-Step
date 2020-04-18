@@ -322,5 +322,17 @@ type Type11 = Extract<'a'|'b'|'c', 'c'|'b'> // 'b'|'c'
 // NonNullable
 type Type12 = NonNullable<string | number | null | undefined> // string | number
 
-// R
-type Type13 = ReturnType<()=>string>
+// ReturnType
+type Type13 = ReturnType<()=>string> // string
+type Type14 = ReturnType<()=>void> // void
+
+// type InstanceType<T extends new (...args: any) => any> = T extends new (...args: any) => infer R ? R : any;
+
+class AClass {
+    constructor() {}
+}
+
+type T1 = InstanceType<typeof AClass> // AClass is a value T1 = AClass
+type T2 = InstanceType<any> // any
+type T3 = InstanceType<never> // never
+
