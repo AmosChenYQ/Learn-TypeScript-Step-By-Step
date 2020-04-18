@@ -12,6 +12,7 @@
 // import "./example/advanced-type";
 // import "./example/advanced-type-2";
 // import './modules/index'
-import "./ts-modules/index"
+// import "./ts-modules/index"
+import "./example/merging"
 
 // document.title = "AmosChenYQ"
