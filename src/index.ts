@@ -13,6 +13,7 @@
 // import "./example/advanced-type-2";
 // import './modules/index'
 // import "./ts-modules/index"
-import "./example/merging"
+// import "./example/merging"
+import "./example/decorators"
 
 // document.title = "AmosChenYQ"
