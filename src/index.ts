@@ -14,6 +14,8 @@
 // import './modules/index'
 // import "./ts-modules/index"
 // import "./example/merging"
-import "./example/decorators"
+// import "./example/decorators"
+import "./example/mixin";
+
 
 // document.title = "AmosChenYQ"
