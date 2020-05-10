@@ -1,0 +1,19 @@
+{
+  "name": "amoschen-test-array-map",
+  "version": "1.0.0",
+  "description": "amoschen's array map",
+  "main": "./dist/test-array-map.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "npm",
+    "amoschen"
+  ],
+  "author": "amoschen@foxmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
