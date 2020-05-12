@@ -1,4 +1,4 @@
-const arrayMap = <T, U>(array: T[],
+const arrayMap = <T, U >(array: T[],
                   callback: ( item: T,
                               index: number,
                               arr: ReadonlyArray<T> ) => U ): U[] => {
